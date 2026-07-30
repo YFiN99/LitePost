@@ -8,12 +8,14 @@ import "./styles/explore.css";
 import "./styles/settings.css";
 import "./styles/responsive.css";
 import "./styles/modal.css";
+import "./styles/bottomnav.css";
 
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
+import BottomNav from "./components/BottomNav";
 
 import Home from "./pages/Home";
 import Explore from "./pages/Explore";
@@ -69,6 +71,7 @@ export default function App() {
             const p = await getProfile(address);
 
             setProfile(p);
+
             setProfileExists(p?.exists ?? false);
 
         } catch (err) {
@@ -76,6 +79,7 @@ export default function App() {
             console.log(err);
 
             setProfile(null);
+
             setProfileExists(false);
 
         }
@@ -109,8 +113,11 @@ export default function App() {
         <div className="app">
 
             <Navbar
+
                 wallet={wallet}
+
                 profile={profile}
+
             />
 
             <div className="layout">
@@ -122,49 +129,85 @@ export default function App() {
                     <Routes>
 
                         <Route
+
                             path="/"
+
                             element={
+
                                 <Home
+
                                     wallet={wallet}
+
                                     profile={profile}
+
                                     profileExists={profileExists}
+
                                     refreshProfile={refreshProfile}
+
                                 />
+
                             }
+
                         />
 
                         <Route
+
                             path="/explore"
+
                             element={
+
                                 <Explore
+
                                     wallet={wallet}
+
                                 />
+
                             }
+
                         />
 
                         <Route
+
                             path="/profile"
+
                             element={
+
                                 <Profile
+
                                     wallet={wallet}
+
                                     profile={profile}
+
                                     refreshProfile={refreshProfile}
+
                                 />
+
                             }
+
                         />
 
                         <Route
+
                             path="/settings"
+
                             element={
+
                                 <Settings
+
                                     wallet={wallet}
+
                                 />
+
                             }
+
                         />
 
                         <Route
+
                             path="*"
+
                             element={<NotFound />}
+
                         />
 
                     </Routes>
@@ -188,23 +231,71 @@ export default function App() {
 
                         <h3>Network</h3>
 
-                        <p>LitVM Testnet</p>
+                        <p>🟢 LitVM Testnet</p>
 
                         {wallet ? (
-                            <p>
+
+                            <p className="network-status">
+
                                 Connected
+
                             </p>
+
                         ) : (
-                            <p>
+
+                            <p className="network-status offline">
+
                                 Wallet Offline
+
                             </p>
+
                         )}
+
+                        <hr />
+
+                        <h3>Community</h3>
+
+                        <a
+
+                            href="https://x.com/Litepost_evm"
+
+                            target="_blank"
+
+                            rel="noopener noreferrer"
+
+                            className="community-link"
+
+                        >
+
+                            𝕏 Follow @Litepost_evm
+
+                        </a>
+
+                        <a
+
+                            href="https://lite-post.vercel.app"
+
+                            target="_blank"
+
+                            rel="noopener noreferrer"
+
+                            className="community-link"
+
+                        >
+
+                            🌐 Visit Website
+
+                        </a>
 
                     </div>
 
                 </aside>
 
             </div>
+
+            {/* Mobile Bottom Navigation */}
+
+            <BottomNav />
 
         </div>
 

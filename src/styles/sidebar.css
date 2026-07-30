@@ -1,18 +1,32 @@
-/* ==========================================
+/* ==========================================================
+   LitePost v2
+   Sidebar.css
+   Aurora Blue + Emerald Glow
+========================================================== */
+
+/* ==========================================================
    SIDEBAR
-========================================== */
+========================================================== */
 
 .sidebar{
-    position:sticky;
-    top:88px;
 
-    display:flex;
-    flex-direction:column;
-    gap:14px;
+    position:sticky;
+
+    top:88px;
 
     width:100%;
 
+    height:calc(100vh - 110px);
+
     padding:24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    overflow-y:auto;
 
     background:rgba(15,25,40,.55);
 
@@ -20,89 +34,151 @@
     -webkit-backdrop-filter:blur(30px);
 
     border-right:1px solid rgba(255,255,255,.08);
+
 }
+
+/* ==========================================================
+   NAVIGATION
+========================================================== */
 
 .sidebar nav{
+
     display:flex;
+
     flex-direction:column;
+
     gap:12px;
+
 }
 
-/* ==========================================
+/* ==========================================================
    MENU
-========================================== */
+========================================================== */
 
 .menu{
+
     display:flex;
+
     align-items:center;
+
     gap:14px;
 
     padding:15px 18px;
 
-    color:var(--textSoft);
-
-    border-radius:16px;
-
     text-decoration:none;
 
-    transition:.28s;
+    color:var(--text-soft);
+
+    border-radius:18px;
 
     border:1px solid transparent;
 
     background:transparent;
 
     font-size:15px;
+
     font-weight:600;
+
+    transition:
+        all .28s ease;
+
+    position:relative;
+
+    overflow:hidden;
+
 }
+
+/* Glow */
+
+.menu::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(79,227,193,.06),
+            rgba(55,199,255,.04)
+        );
+
+    opacity:0;
+
+    transition:.25s;
+
+}
+
+.menu:hover::before{
+
+    opacity:1;
+
+}
+
+/* ==========================================================
+   HOVER
+========================================================== */
 
 .menu:hover{
 
     color:var(--text);
 
-    background:rgba(255,255,255,.05);
+    border-color:rgba(79,227,193,.18);
 
-    border:1px solid rgba(79,227,193,.18);
+    background:rgba(255,255,255,.05);
 
     transform:translateX(4px);
 
     box-shadow:
-    0 0 18px rgba(79,227,193,.15);
+
+        0 0 20px rgba(79,227,193,.16);
 
 }
 
-/* ==========================================
+/* ==========================================================
    ACTIVE
-========================================== */
+========================================================== */
 
 .menu.active{
 
-    color:white;
+    color:#fff;
 
     background:
-    linear-gradient(
-        135deg,
-        rgba(61,162,255,.20),
-        rgba(79,227,193,.18)
-    );
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(55,199,255,.18),
+
+            rgba(79,227,193,.18)
+
+        );
 
     border:1px solid rgba(79,227,193,.35);
 
     box-shadow:
-    inset 0 0 20px rgba(79,227,193,.08),
-    0 0 25px rgba(79,227,193,.20);
+
+        inset 0 0 18px rgba(79,227,193,.08),
+
+        0 0 24px rgba(79,227,193,.18);
 
 }
 
-/* ==========================================
+/* ==========================================================
    ICON
-========================================== */
+========================================================== */
 
 .menu svg{
 
     width:21px;
+
     height:21px;
 
-    opacity:.9;
+    flex-shrink:0;
 
     transition:.25s;
 
@@ -116,9 +192,15 @@
 
 }
 
-/* ==========================================
+.menu.active svg{
+
+    color:var(--primary);
+
+}
+
+/* ==========================================================
    LABEL
-========================================== */
+========================================================== */
 
 .menu span{
 
@@ -128,9 +210,9 @@
 
 }
 
-/* ==========================================
+/* ==========================================================
    BADGE
-========================================== */
+========================================================== */
 
 .sidebar-badge{
 
@@ -140,88 +222,172 @@
 
     height:22px;
 
-    border-radius:999px;
-
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
-    background:var(--primary);
+    border-radius:999px;
 
-    color:#06141E;
+    background:linear-gradient(
+        135deg,
+        #37C7FF,
+        #4FE3C1
+    );
+
+    color:#07111F;
 
     font-size:11px;
 
     font-weight:700;
 
-}
-
-/* ==========================================
-   PROFILE MINI
-========================================== */
+}/* ==========================================================
+   PROFILE CARD
+========================================================== */
 
 .sidebar-profile{
 
     margin-top:auto;
 
-    padding:18px;
+    padding:20px;
 
-    border-radius:18px;
+    border-radius:20px;
 
-    background:rgba(255,255,255,.04);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.05),
+            rgba(255,255,255,.03)
+        );
 
-    border:1px solid rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
 
     backdrop-filter:blur(20px);
 
+    transition:.30s;
+
 }
+
+.sidebar-profile:hover{
+
+    transform:translateY(-2px);
+
+    border-color:rgba(79,227,193,.25);
+
+    box-shadow:
+
+        0 14px 35px rgba(0,0,0,.35),
+
+        0 0 20px rgba(79,227,193,.15);
+
+}
+
+/* ==========================================================
+   PROFILE AVATAR
+========================================================== */
 
 .sidebar-profile img{
 
-    width:56px;
-    height:56px;
+    width:60px;
+
+    height:60px;
 
     border-radius:50%;
 
     object-fit:cover;
 
-    margin-bottom:12px;
+    display:block;
 
-    border:2px solid rgba(79,227,193,.30);
+    margin:0 auto 14px;
+
+    border:2px solid rgba(79,227,193,.35);
+
+    box-shadow:
+
+        0 0 20px rgba(79,227,193,.22);
 
 }
 
+.sidebar-profile .avatar{
+
+    width:60px;
+
+    height:60px;
+
+    margin:0 auto 14px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #37C7FF,
+            #4FE3C1
+        );
+
+    color:#07111F;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    border:2px solid rgba(255,255,255,.08);
+
+}
+
+/* ==========================================================
+   PROFILE TEXT
+========================================================== */
+
 .sidebar-profile h4{
+
+    margin:0;
+
+    text-align:center;
 
     color:var(--text);
 
-    font-size:15px;
+    font-size:16px;
 
-    margin-bottom:4px;
+    font-weight:700;
 
 }
 
 .sidebar-profile p{
 
-    color:var(--textSoft);
+    margin-top:8px;
+
+    text-align:center;
+
+    color:var(--text-soft);
 
     font-size:13px;
 
-    line-height:1.5;
+    line-height:1.6;
+
+    word-break:break-word;
 
 }
 
-/* ==========================================
+/* ==========================================================
    CREATE BUTTON
-========================================== */
+========================================================== */
 
 .sidebar-create{
 
-    margin-top:18px;
-
     width:100%;
 
-    padding:14px;
+    margin-top:20px;
+
+    padding:15px 18px;
 
     border:none;
 
@@ -236,16 +402,18 @@
     font-weight:700;
 
     background:
-    linear-gradient(
-        135deg,
-        #4FE3C1,
-        #39B8FF
-    );
+
+        linear-gradient(
+            135deg,
+            #4FE3C1,
+            #37C7FF
+        );
 
     transition:.28s;
 
     box-shadow:
-    0 0 24px rgba(79,227,193,.25);
+
+        0 10px 28px rgba(79,227,193,.28);
 
 }
 
@@ -254,19 +422,513 @@
     transform:translateY(-2px);
 
     box-shadow:
-    0 10px 28px rgba(79,227,193,.35);
+
+        0 18px 40px rgba(79,227,193,.35);
 
 }
 
-/* ==========================================
+.sidebar-create:active{
+
+    transform:scale(.98);
+
+}
+
+/* ==========================================================
+   CREATE BUTTON DISABLED
+========================================================== */
+
+.sidebar-create:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+    box-shadow:none;
+
+}/* ==========================================================
+   RIGHTBAR
+========================================================== */
+
+.rightbar{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.rightbar .card{
+
+    padding:22px;
+
+    border-radius:22px;
+
+    background:rgba(18,27,42,.58);
+
+    backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+        0 12px 32px rgba(0,0,0,.28);
+
+    transition:.30s;
+
+}
+
+.rightbar .card:hover{
+
+    transform:translateY(-2px);
+
+    border-color:rgba(79,227,193,.20);
+
+    box-shadow:
+
+        0 18px 42px rgba(0,0,0,.35),
+
+        0 0 20px rgba(79,227,193,.10);
+
+}
+
+/* ==========================================================
+   CARD TITLE
+========================================================== */
+
+.rightbar .card h3{
+
+    margin-bottom:16px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+}
+
+/* ==========================================================
+   CARD TEXT
+========================================================== */
+
+.rightbar .card p{
+
+    margin:10px 0;
+
+    color:var(--text-soft);
+
+    font-size:14px;
+
+    transition:.25s;
+
+}
+
+.rightbar .card p:hover{
+
+    color:var(--primary);
+
+}
+
+/* ==========================================================
+   NETWORK STATUS
+========================================================== */
+
+.network-status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:8px;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:rgba(79,227,193,.12);
+
+    color:#4FE3C1;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+.network-status.offline{
+
+    background:rgba(255,107,107,.12);
+
+    color:#ff6b6b;
+
+}
+
+/* ==========================================================
+   DIVIDER
+========================================================== */
+
+.rightbar .card hr{
+
+    margin:20px 0;
+
+    border:none;
+
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/* ==========================================================
+   COMMUNITY
+========================================================== */
+
+.community-link{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:100%;
+
+    margin-top:12px;
+
+    padding:13px 18px;
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    color:var(--text);
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.28s;
+
+}
+
+.community-link:hover{
+
+    color:#07111F;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #37C7FF,
+            #4FE3C1
+        );
+
+    border-color:transparent;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+
+        0 12px 28px rgba(79,227,193,.25);
+
+}
+
+.community-link:active{
+
+    transform:scale(.98);
+
+}/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:1200px){
+
+    .sidebar{
+
+        padding:20px;
+
+    }
+
+    .menu{
+
+        padding:14px 16px;
+
+        font-size:14px;
+
+    }
+
+    .menu svg{
+
+        width:20px;
+
+        height:20px;
+
+    }
+
+    .sidebar-profile{
+
+        padding:18px;
+
+    }
+
+    .rightbar .card{
+
+        padding:20px;
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .sidebar{
+
+        position:relative;
+
+        top:0;
+
+        height:auto;
+
+        border-right:none;
+
+        border-bottom:1px solid rgba(255,255,255,.08);
+
+        margin-bottom:20px;
+
+    }
+
+    .sidebar nav{
+
+        flex-direction:row;
+
+        flex-wrap:wrap;
+
+        gap:10px;
+
+    }
+
+    .menu{
+
+        flex:1 1 calc(50% - 10px);
+
+        justify-content:center;
+
+    }
+
+    .sidebar-profile{
+
+        margin-top:10px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .sidebar{
+
+        padding:16px;
+
+        gap:14px;
+
+    }
+
+    .menu{
+
+        padding:13px 14px;
+
+        border-radius:14px;
+
+    }
+
+    .menu span{
+
+        font-size:14px;
+
+    }
+
+    .sidebar-profile{
+
+        padding:16px;
+
+    }
+
+    .sidebar-profile img,
+
+    .sidebar-profile .avatar{
+
+        width:52px;
+
+        height:52px;
+
+    }
+
+    .sidebar-create{
+
+        padding:14px;
+
+    }
+
+    .community-link{
+
+        padding:12px;
+
+        font-size:14px;
+
+    }
+
+}
+
+@media (max-width:600px){
+
+    .sidebar nav{
+
+        flex-direction:column;
+
+    }
+
+    .menu{
+
+        width:100%;
+
+        flex:none;
+
+        justify-content:flex-start;
+
+    }
+
+}
+
+/* ==========================================================
    SCROLLBAR
-========================================== */
+========================================================== */
 
 .sidebar::-webkit-scrollbar{
-    width:6px;
+
+    width:7px;
+
+}
+
+.sidebar::-webkit-scrollbar-track{
+
+    background:transparent;
+
 }
 
 .sidebar::-webkit-scrollbar-thumb{
+
     background:rgba(79,227,193,.25);
-    border-radius:20px;
+
+    border-radius:999px;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover{
+
+    background:rgba(79,227,193,.45);
+
+}
+
+/* ==========================================================
+   SMOOTH
+========================================================== */
+
+.sidebar,
+.menu,
+.sidebar-profile,
+.sidebar-create,
+.community-link,
+.rightbar .card{
+
+    transition:all .28s ease;
+
+}/* ==========================================================
+   DESKTOP ONLY SIDEBAR
+========================================================== */
+
+@media (min-width:769px){
+
+    .sidebar{
+
+        display:flex;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    /* Sidebar hilang */
+
+    .sidebar{
+
+        display:none !important;
+
+    }
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (min-width:769px) and (max-width:1100px){
+
+    .sidebar{
+
+        width:220px;
+
+    }
+
+    .menu{
+
+        padding:13px 14px;
+
+    }
+
+    .menu span{
+
+        font-size:14px;
+
+    }
+
+}
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (min-width:1400px){
+
+    .sidebar{
+
+        width:260px;
+
+    }
+
+}
+
+/* ==========================================================
+   SMOOTH
+========================================================== */
+
+.sidebar{
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+
 }

@@ -237,4 +237,99 @@
 
 }
 
+}/* ==========================================================
+   MOBILE NAVBAR
+========================================================== */
+
+@media (max-width:768px){
+
+    .navbar{
+
+        position:sticky;
+
+        top:0;
+
+        left:0;
+
+        right:0;
+
+        z-index:999;
+
+        padding:14px 18px;
+
+        border-radius:0;
+
+        backdrop-filter:blur(24px);
+        -webkit-backdrop-filter:blur(24px);
+
+        background:rgba(8,16,28,.85);
+
+        border-bottom:1px solid rgba(255,255,255,.08);
+
+    }
+
+    /* Logo */
+
+    .navbar h1,
+    .navbar .logo{
+
+        font-size:22px;
+
+    }
+
+    /* Wallet */
+
+    .wallet-address{
+
+        max-width:120px;
+
+        overflow:hidden;
+
+        text-overflow:ellipsis;
+
+        white-space:nowrap;
+
+        font-size:12px;
+
+    }
+
+    /* Button */
+
+    .navbar button{
+
+        padding:10px 14px;
+
+        border-radius:14px;
+
+    }
+
+}
+
+/* ==========================================================
+   EXTRA SMALL PHONE
+========================================================== */
+
+@media (max-width:480px){
+
+    .navbar{
+
+        padding:12px 14px;
+
+    }
+
+    .navbar h1,
+    .navbar .logo{
+
+        font-size:20px;
+
+    }
+
+    .wallet-address{
+
+        max-width:90px;
+
+        font-size:11px;
+
+    }
+
 }

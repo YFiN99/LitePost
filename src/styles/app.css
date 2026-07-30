@@ -1350,4 +1350,78 @@ button:active{
 
     transform:scale(.98);
 
+}/* ==========================================================
+   MOBILE LAYOUT
+========================================================== */
+
+@media (max-width:768px){
+
+    /* Layout menjadi 1 kolom */
+
+    .layout{
+
+        display:block;
+
+        width:100%;
+
+        margin:0;
+
+        padding:0;
+
+    }
+
+    /* Feed memenuhi layar */
+
+    .feed{
+
+        width:100%;
+
+        max-width:100%;
+
+        padding:16px;
+
+        padding-bottom:110px; /* ruang untuk BottomNav */
+
+    }
+
+    /* Sidebar desktop disembunyikan */
+
+    .sidebar{
+
+        display:none;
+
+    }
+
+    /* Rightbar disembunyikan */
+
+    .rightbar{
+
+        display:none;
+
+    }
+
+}
+
+/* ==========================================================
+   EXTRA SMALL
+========================================================== */
+
+@media (max-width:480px){
+
+    .feed{
+
+        padding:14px;
+
+        padding-bottom:115px;
+
+    }
+
+    .card{
+
+        border-radius:18px;
+
+        padding:18px;
+
+    }
+
 }
