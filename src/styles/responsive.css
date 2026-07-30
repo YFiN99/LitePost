@@ -1,0 +1,373 @@
+/* ===========================================
+   TABLET
+=========================================== */
+
+@media (max-width: 1280px){
+
+.layout{
+    grid-template-columns:220px 1fr 320px;
+}
+
+.feed{
+    max-width:700px;
+}
+
+}
+
+
+/* ===========================================
+   SMALL TABLET
+=========================================== */
+
+@media (max-width:1100px){
+
+.layout{
+    grid-template-columns:90px 1fr;
+}
+
+.rightbar{
+    display:none;
+}
+
+.sidebar{
+    padding:20px 10px;
+}
+
+.sidebar .menu span{
+    display:none;
+}
+
+.sidebar .menu{
+    justify-content:center;
+    padding:15px;
+}
+
+.logo small{
+    display:none;
+}
+
+.feed{
+    max-width:100%;
+}
+
+}
+
+
+/* ===========================================
+   MOBILE
+=========================================== */
+
+@media (max-width:768px){
+
+.header{
+
+height:64px;
+
+padding:0 15px;
+
+}
+
+.logo{
+
+font-size:22px;
+
+}
+
+.wallet-btn{
+
+padding:10px 14px;
+
+font-size:13px;
+
+}
+
+.layout{
+
+display:block;
+
+}
+
+.sidebar{
+
+position:fixed;
+
+bottom:0;
+
+left:0;
+
+right:0;
+
+height:72px;
+
+padding:0;
+
+background:rgba(8,18,34,.92);
+
+backdrop-filter:blur(35px);
+
+-webkit-backdrop-filter:blur(35px);
+
+border-top:1px solid rgba(255,255,255,.08);
+
+display:flex;
+
+flex-direction:row;
+
+justify-content:space-around;
+
+align-items:center;
+
+z-index:999;
+
+}
+
+.sidebar nav{
+
+display:flex;
+
+width:100%;
+
+justify-content:space-around;
+
+}
+
+.sidebar .menu{
+
+flex-direction:column;
+
+gap:4px;
+
+font-size:11px;
+
+padding:8px;
+
+border-radius:14px;
+
+background:transparent;
+
+}
+
+.sidebar .menu svg{
+
+font-size:22px;
+
+}
+
+.sidebar .menu span{
+
+display:block;
+
+font-size:11px;
+
+}
+
+.feed{
+
+padding:18px 14px 90px;
+
+max-width:100%;
+
+}
+
+.card,
+
+.post-box,
+
+.post-card{
+
+padding:18px;
+
+border-radius:20px;
+
+}
+
+.post-box textarea{
+
+height:120px;
+
+font-size:15px;
+
+}
+
+.publish{
+
+width:100%;
+
+}
+
+.rightbar{
+
+display:none;
+
+}
+
+.profile-cover{
+
+height:180px;
+
+}
+
+.profile-avatar{
+
+width:80px;
+
+height:80px;
+
+margin-top:-40px;
+
+}
+
+}
+
+
+/* ===========================================
+   SMALL MOBILE
+=========================================== */
+
+@media (max-width:480px){
+
+body{
+
+font-size:14px;
+
+}
+
+.logo{
+
+font-size:20px;
+
+}
+
+.header{
+
+padding:0 12px;
+
+}
+
+.feed{
+
+padding:14px 12px 95px;
+
+}
+
+.card{
+
+padding:16px;
+
+}
+
+.post-card{
+
+padding:16px;
+
+}
+
+.post-content{
+
+font-size:15px;
+
+line-height:1.7;
+
+}
+
+.publish{
+
+padding:13px;
+
+font-size:15px;
+
+}
+
+.wallet-btn{
+
+padding:9px 12px;
+
+font-size:12px;
+
+}
+
+.sidebar{
+
+height:68px;
+
+}
+
+.sidebar .menu{
+
+font-size:10px;
+
+}
+
+.sidebar .menu svg{
+
+font-size:20px;
+
+}
+
+}
+
+
+/* ===========================================
+   LARGE DESKTOP
+=========================================== */
+
+@media (min-width:1600px){
+
+.layout{
+
+grid-template-columns:280px 760px 380px;
+
+justify-content:center;
+
+gap:30px;
+
+}
+
+.feed{
+
+max-width:760px;
+
+margin:auto;
+
+}
+
+.rightbar{
+
+max-width:380px;
+
+}
+
+}
+
+
+/* ===========================================
+   TOUCH DEVICES
+=========================================== */
+
+@media (hover:none){
+
+.menu:hover{
+
+transform:none;
+
+}
+
+.publish:hover{
+
+transform:none;
+
+}
+
+.wallet-btn:hover{
+
+transform:none;
+
+}
+
+.post-card:hover{
+
+transform:none;
+
+}
+
+}

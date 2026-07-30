@@ -1,0 +1,228 @@
+/* =========================================
+   SETTINGS PAGE
+========================================= */
+
+.settings-page{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.settings-title{
+    font-size:34px;
+    font-weight:700;
+    color:var(--text);
+    margin-bottom:6px;
+}
+
+.settings-subtitle{
+    color:var(--textSoft);
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+/* ========================= */
+
+.settings-section{
+    background:var(--card);
+    backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(30px);
+
+    border:1px solid var(--border);
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+}
+
+.settings-header{
+    padding:22px 24px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.settings-header h3{
+    color:var(--text);
+    font-size:18px;
+    margin:0;
+}
+
+.settings-header p{
+    margin-top:6px;
+    color:var(--textSoft);
+    font-size:14px;
+}
+
+/* ========================= */
+
+.setting-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 24px;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+    transition:.25s;
+}
+
+.setting-item:last-child{
+    border-bottom:none;
+}
+
+.setting-item:hover{
+    background:rgba(79,227,193,.06);
+}
+
+/* ========================= */
+
+.setting-left{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.setting-icon{
+    width:46px;
+    height:46px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:rgba(79,227,193,.08);
+
+    color:var(--primary);
+
+    font-size:22px;
+}
+
+.setting-info h4{
+    margin:0;
+    color:var(--text);
+    font-size:15px;
+}
+
+.setting-info p{
+    margin-top:4px;
+    color:var(--textSoft);
+    font-size:13px;
+}
+
+/* ========================= */
+
+.setting-action{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.setting-value{
+    color:var(--textSoft);
+    font-size:14px;
+}
+
+.setting-arrow{
+    color:rgba(255,255,255,.35);
+    font-size:18px;
+}
+
+/* ========================= */
+
+.settings-button{
+    background:rgba(79,227,193,.10);
+
+    border:1px solid rgba(79,227,193,.30);
+
+    color:var(--primary);
+
+    padding:10px 18px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.25s;
+}
+
+.settings-button:hover{
+    background:var(--primary);
+    color:#061018;
+
+    box-shadow:
+        0 0 18px rgba(79,227,193,.45);
+}
+
+/* ========================= */
+
+.settings-danger{
+    border-color:rgba(255,80,80,.25);
+}
+
+.settings-danger:hover{
+    background:rgba(255,80,80,.08);
+}
+
+.settings-danger .setting-icon{
+    background:rgba(255,80,80,.12);
+    color:#ff7b7b;
+}
+
+.settings-danger .settings-button{
+    color:#ff7b7b;
+    border-color:rgba(255,80,80,.35);
+}
+
+.settings-danger .settings-button:hover{
+    background:#ff5b5b;
+    color:white;
+}
+
+/* ========================= */
+
+.switch{
+    position:relative;
+    width:54px;
+    height:30px;
+    background:rgba(255,255,255,.12);
+    border-radius:999px;
+    transition:.25s;
+    cursor:pointer;
+}
+
+.switch.active{
+    background:rgba(79,227,193,.55);
+}
+
+.switch::before{
+    content:"";
+
+    position:absolute;
+    left:4px;
+    top:4px;
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+    background:white;
+
+    transition:.25s;
+}
+
+.switch.active::before{
+    left:28px;
+}
+
+/* ========================= */
+
+.settings-footer{
+    margin-top:18px;
+    text-align:center;
+    color:rgba(255,255,255,.35);
+    font-size:13px;
+}

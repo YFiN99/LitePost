@@ -1,0 +1,71 @@
+<svg width="520" height="110" viewBox="0 0 520 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+
+    <linearGradient id="aurora" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#37C7FF"/>
+      <stop offset="100%" stop-color="#4FE3C1"/>
+    </linearGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+  </defs>
+
+  <!-- ICON -->
+
+  <g filter="url(#glow)">
+
+    <path
+      d="M52 16L77 40L52 64L27 40L52 16Z"
+      fill="url(#aurora)"
+    />
+
+    <path
+      d="M52 28L65 40L52 52L39 40L52 28Z"
+      fill="#07111F"
+    />
+
+    <circle
+      cx="52"
+      cy="40"
+      r="5"
+      fill="#4FE3C1"
+    />
+
+  </g>
+
+  <!-- WORD -->
+
+  <text
+    x="105"
+    y="49"
+    font-family="Inter,Segoe UI,sans-serif"
+    font-size="42"
+    font-weight="800"
+    fill="#F3F6FA"
+    letter-spacing="-1">
+
+    Lite<tspan fill="url(#aurora)">Post</tspan>
+
+  </text>
+
+  <text
+    x="106"
+    y="74"
+    font-family="Inter,Segoe UI,sans-serif"
+    font-size="14"
+    font-weight="500"
+    fill="#8EA6BF"
+    letter-spacing=".8">
+
+    Decentralized Social on LitVM
+
+  </text>
+
+</svg>

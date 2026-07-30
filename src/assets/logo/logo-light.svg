@@ -1,0 +1,106 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 520 110"
+    width="520"
+    height="110">
+
+    <defs>
+
+        <linearGradient
+            id="aurora"
+            x1="20"
+            y1="10"
+            x2="110"
+            y2="95">
+
+            <stop offset="0%" stop-color="#37C7FF"/>
+            <stop offset="55%" stop-color="#4BCFFF"/>
+            <stop offset="100%" stop-color="#4FE3C1"/>
+
+        </linearGradient>
+
+        <filter id="shadow"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%">
+
+            <feDropShadow
+                dx="0"
+                dy="2"
+                stdDeviation="3"
+                flood-color="#37C7FF"
+                flood-opacity=".18"/>
+
+        </filter>
+
+    </defs>
+
+    <!-- ICON -->
+
+    <g filter="url(#shadow)">
+
+        <path
+            d="
+                M55 16
+                L92 53
+                L55 90
+                L18 53
+                Z"
+            fill="url(#aurora)"/>
+
+        <path
+            d="
+                M55 31
+                L77 53
+                L55 75
+                L33 53
+                Z"
+            fill="#FFFFFF"/>
+
+        <circle
+            cx="55"
+            cy="53"
+            r="6"
+            fill="#4FE3C1"/>
+
+    </g>
+
+    <!-- WORDMARK -->
+
+    <text
+        x="120"
+        y="58"
+        font-family="Inter,Segoe UI,sans-serif"
+        font-size="42"
+        font-weight="800"
+        fill="#10263C">
+
+        Lite<tspan fill="url(#aurora)">Post</tspan>
+
+    </text>
+
+    <!-- TAGLINE -->
+
+    <text
+        x="122"
+        y="83"
+        font-family="Inter,Segoe UI,sans-serif"
+        font-size="13"
+        font-weight="600"
+        letter-spacing=".8"
+        fill="#5F7285">
+
+        DECENTRALIZED SOCIAL ON
+
+        <tspan
+            fill="#19C6A3"
+            font-weight="700">
+
+            LITVM
+
+        </tspan>
+
+    </text>
+
+</svg>

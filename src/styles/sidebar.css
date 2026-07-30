@@ -1,0 +1,272 @@
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar{
+    position:sticky;
+    top:88px;
+
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+
+    width:100%;
+
+    padding:24px;
+
+    background:rgba(15,25,40,.55);
+
+    backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(30px);
+
+    border-right:1px solid rgba(255,255,255,.08);
+}
+
+.sidebar nav{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+/* ==========================================
+   MENU
+========================================== */
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    padding:15px 18px;
+
+    color:var(--textSoft);
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    transition:.28s;
+
+    border:1px solid transparent;
+
+    background:transparent;
+
+    font-size:15px;
+    font-weight:600;
+}
+
+.menu:hover{
+
+    color:var(--text);
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(79,227,193,.18);
+
+    transform:translateX(4px);
+
+    box-shadow:
+    0 0 18px rgba(79,227,193,.15);
+
+}
+
+/* ==========================================
+   ACTIVE
+========================================== */
+
+.menu.active{
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(61,162,255,.20),
+        rgba(79,227,193,.18)
+    );
+
+    border:1px solid rgba(79,227,193,.35);
+
+    box-shadow:
+    inset 0 0 20px rgba(79,227,193,.08),
+    0 0 25px rgba(79,227,193,.20);
+
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.menu svg{
+
+    width:21px;
+    height:21px;
+
+    opacity:.9;
+
+    transition:.25s;
+
+}
+
+.menu:hover svg{
+
+    color:var(--primary);
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================================
+   LABEL
+========================================== */
+
+.menu span{
+
+    flex:1;
+
+    letter-spacing:.2px;
+
+}
+
+/* ==========================================
+   BADGE
+========================================== */
+
+.sidebar-badge{
+
+    margin-left:auto;
+
+    min-width:22px;
+
+    height:22px;
+
+    border-radius:999px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--primary);
+
+    color:#06141E;
+
+    font-size:11px;
+
+    font-weight:700;
+
+}
+
+/* ==========================================
+   PROFILE MINI
+========================================== */
+
+.sidebar-profile{
+
+    margin-top:auto;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    backdrop-filter:blur(20px);
+
+}
+
+.sidebar-profile img{
+
+    width:56px;
+    height:56px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin-bottom:12px;
+
+    border:2px solid rgba(79,227,193,.30);
+
+}
+
+.sidebar-profile h4{
+
+    color:var(--text);
+
+    font-size:15px;
+
+    margin-bottom:4px;
+
+}
+
+.sidebar-profile p{
+
+    color:var(--textSoft);
+
+    font-size:13px;
+
+    line-height:1.5;
+
+}
+
+/* ==========================================
+   CREATE BUTTON
+========================================== */
+
+.sidebar-create{
+
+    margin-top:18px;
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    color:#07111F;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+        135deg,
+        #4FE3C1,
+        #39B8FF
+    );
+
+    transition:.28s;
+
+    box-shadow:
+    0 0 24px rgba(79,227,193,.25);
+
+}
+
+.sidebar-create:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 10px 28px rgba(79,227,193,.35);
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+.sidebar::-webkit-scrollbar{
+    width:6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+    background:rgba(79,227,193,.25);
+    border-radius:20px;
+}
