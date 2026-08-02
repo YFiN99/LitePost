@@ -2,110 +2,58 @@ import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
 
-  return (
+    return (
 
-    <aside className="sidebar">
+        <aside className="sidebar">
 
-      <NavLink
+            <NavLink
+                to="/"
+                end
+                className={({ isActive }) =>
+                    isActive ? "menu active" : "menu"
+                }
+            >
+                🏠 Home
+            </NavLink>
 
-        to="/"
+            <NavLink
+                to="/explore"
+                className={({ isActive }) =>
+                    isActive ? "menu active" : "menu"
+                }
+            >
+                🔍 Explore
+            </NavLink>
 
-        end
+            <NavLink
+                to="/swap"
+                className={({ isActive }) =>
+                    isActive ? "menu active" : "menu"
+                }
+            >
+                ◈ Swap
+            </NavLink>
 
-        className={({isActive})=>
+            <NavLink
+                to="/profile"
+                className={({ isActive }) =>
+                    isActive ? "menu active" : "menu"
+                }
+            >
+                👤 Profile
+            </NavLink>
 
-          isActive
+            <NavLink
+                to="/settings"
+                className={({ isActive }) =>
+                    isActive ? "menu active" : "menu"
+                }
+            >
+                ⚙ Settings
+            </NavLink>
 
-          ?
+        </aside>
 
-          "menu active"
-
-          :
-
-          "menu"
-
-        }
-
-      >
-
-        🏠 Home
-
-      </NavLink>
-
-      <NavLink
-
-        to="/explore"
-
-        className={({isActive})=>
-
-          isActive
-
-          ?
-
-          "menu active"
-
-          :
-
-          "menu"
-
-        }
-
-      >
-
-        🔍 Explore
-
-      </NavLink>
-
-      <NavLink
-
-        to="/profile"
-
-        className={({isActive})=>
-
-          isActive
-
-          ?
-
-          "menu active"
-
-          :
-
-          "menu"
-
-        }
-
-      >
-
-        👤 Profile
-
-      </NavLink>
-
-      <NavLink
-
-        to="/settings"
-
-        className={({isActive})=>
-
-          isActive
-
-          ?
-
-          "menu active"
-
-          :
-
-          "menu"
-
-        }
-
-      >
-
-        ⚙ Settings
-
-      </NavLink>
-
-    </aside>
-
-  );
+    );
 
 }

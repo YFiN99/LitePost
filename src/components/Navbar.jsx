@@ -33,7 +33,7 @@ export default function Navbar({
 
         <div className="subtitle">
 
-          Decentralized Social on LitVM
+          Decentralized Social
 
         </div>
 

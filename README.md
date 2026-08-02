@@ -7,7 +7,7 @@ LitePost
 </h1>
 
 <p align="center">
-A Decentralized Social Platform built on <strong>LitVM</strong>
+A Decentralized Social Platform built on <strong>EVM</strong>
 </p>
 
 <p align="center">
@@ -32,7 +32,7 @@ A Decentralized Social Platform built on <strong>LitVM</strong>
 
 # 🚀 Overview
 
-LitePost is a decentralized social networking platform built on **LitVM**.
+LitePost is a decentralized social networking platform built on **EVM**.
 
 Instead of relying on centralized servers, every interaction is executed directly on-chain through smart contracts.
 
@@ -69,7 +69,7 @@ LitePost demonstrates how Web3 can power censorship-resistant social application
 ## Blockchain
 
 - Solidity
-- LitVM
+- EVM
 - MetaMask
 
 ## Deployment

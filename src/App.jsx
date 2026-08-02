@@ -19,6 +19,7 @@ import BottomNav from "./components/BottomNav";
 
 import Home from "./pages/Home";
 import Explore from "./pages/Explore";
+import Swap from "./pages/Swap";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
@@ -110,194 +111,138 @@ export default function App() {
 
     return (
 
-        <div className="app">
-
-            <Navbar
-
-                wallet={wallet}
-
-                profile={profile}
-
-            />
-
-            <div className="layout">
-
-                <Sidebar />
-
-                <main className="feed">
-
-                    <Routes>
-
-                        <Route
-
-                            path="/"
-
-                            element={
-
-                                <Home
-
-                                    wallet={wallet}
-
-                                    profile={profile}
-
-                                    profileExists={profileExists}
-
-                                    refreshProfile={refreshProfile}
-
-                                />
-
-                            }
-
-                        />
-
-                        <Route
-
-                            path="/explore"
-
-                            element={
-
-                                <Explore
-
-                                    wallet={wallet}
-
-                                />
-
-                            }
-
-                        />
-
-                        <Route
-
-                            path="/profile"
-
-                            element={
-
-                                <Profile
-
-                                    wallet={wallet}
-
-                                    profile={profile}
-
-                                    refreshProfile={refreshProfile}
-
-                                />
-
-                            }
-
-                        />
-
-                        <Route
-
-                            path="/settings"
-
-                            element={
-
-                                <Settings
-
-                                    wallet={wallet}
-
-                                />
-
-                            }
-
-                        />
-
-                        <Route
-
-                            path="*"
-
-                            element={<NotFound />}
-
-                        />
-
-                    </Routes>
-
-                </main>
-
-                <aside className="rightbar">
-
-                    <div className="card">
-
-                        <h3>Trending</h3>
-
-                        <p>#LitePost</p>
-                        <p>#LitVM</p>
-                        <p>#Web3</p>
-                        <p>#Blockchain</p>
-
-                    </div>
-
-                    <div className="card">
-
-                        <h3>Network</h3>
-
-                        <p>🟢 LitVM Testnet</p>
-
-                        {wallet ? (
-
-                            <p className="network-status">
-
-                                Connected
-
-                            </p>
-
-                        ) : (
-
-                            <p className="network-status offline">
-
-                                Wallet Offline
-
-                            </p>
-
-                        )}
-
-                        <hr />
-
-                        <h3>Community</h3>
-
-                        <a
-
-                            href="https://x.com/Litepost_evm"
-
-                            target="_blank"
-
-                            rel="noopener noreferrer"
-
-                            className="community-link"
-
-                        >
-
-                            𝕏 Follow @Litepost_evm
-
-                        </a>
-
-                        <a
-
-                            href="https://lite-post.vercel.app"
-
-                            target="_blank"
-
-                            rel="noopener noreferrer"
-
-                            className="community-link"
-
-                        >
-
-                            🌐 Visit Website
-
-                        </a>
-
-                    </div>
-
-                </aside>
-
-            </div>
-
-            {/* Mobile Bottom Navigation */}
-
-            <BottomNav />
+    <div className="app">
+
+        <Navbar
+            wallet={wallet}
+            profile={profile}
+        />
+
+        <div className="layout">
+
+            <Sidebar />
+
+            <main className="feed">
+
+                <Routes>
+
+                    <Route
+                        path="/"
+                        element={
+                            <Home
+                                wallet={wallet}
+                                profile={profile}
+                                profileExists={profileExists}
+                                refreshProfile={refreshProfile}
+                            />
+                        }
+                    />
+
+                    <Route
+                        path="/explore"
+                        element={
+                            <Explore
+                                wallet={wallet}
+                            />
+                        }
+                    />
+
+                    <Route
+                        path="/swap"
+                        element={<Swap />}
+                    />
+
+                    <Route
+                        path="/profile"
+                        element={
+                            <Profile
+                                wallet={wallet}
+                                profile={profile}
+                                refreshProfile={refreshProfile}
+                            />
+                        }
+                    />
+
+                    <Route
+                        path="/settings"
+                        element={
+                            <Settings
+                                wallet={wallet}
+                            />
+                        }
+                    />
+
+                    <Route
+                        path="*"
+                        element={<NotFound />}
+                    />
+
+                </Routes>
+
+            </main>
+
+            <aside className="rightbar">
+
+                <div className="card">
+
+                    <h3>Trending</h3>
+
+                    <p>#LitePost</p>
+                    <p>#Testnet</p>
+                    <p>#Web3</p>
+                    <p>#Blockchain</p>
+
+                </div>
+
+                <div className="card">
+
+                    <h3>Network</h3>
+
+                    <p>🟢 Testnet</p>
+
+                    {wallet ? (
+                        <p className="network-status">
+                            Connected
+                        </p>
+                    ) : (
+                        <p className="network-status offline">
+                            Wallet Offline
+                        </p>
+                    )}
+
+                    <hr />
+
+                    <h3>Community</h3>
+
+                    <a
+                        href="https://x.com/Litepost_evm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="community-link"
+                    >
+                        𝕏 Follow @Litepost_evm
+                    </a>
+
+                                        <a
+                        href="https://lite-post.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="community-link"
+                    >
+                        🌐 Visit Website
+                    </a>
+
+                </div>
+
+            </aside>
 
         </div>
+
+        {/* Mobile Bottom Navigation */}
+
+        <BottomNav />
+
+    </div>
 
     );
 

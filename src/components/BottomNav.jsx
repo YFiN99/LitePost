@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import {
     House,
     Search,
-    SquarePen,
+    Gem,
     User,
     Settings
 } from "lucide-react";
@@ -37,27 +37,21 @@ export default function BottomNav() {
                 <span>Explore</span>
             </NavLink>
 
-            {/* Create Post */}
+            {/* Swap */}
 
-            <button
-                className="bottom-create"
-                title="Create Post"
-                onClick={() => {
-
-                    window.scrollTo({
-
-                        top: 0,
-
-                        behavior: "smooth"
-
-                    });
-
-                }}
+            <NavLink
+                to="/swap"
+                className={({ isActive }) =>
+                    isActive
+                        ? "bottom-create active"
+                        : "bottom-create"
+                }
+                title="Swap"
             >
 
-                <SquarePen size={24} />
+                <Gem size={24} />
 
-            </button>
+            </NavLink>
 
             <NavLink
                 to="/profile"
